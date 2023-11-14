@@ -1,6 +1,6 @@
 import { getPrometheusMetricsPort } from '../../config/config'
 import * as client from 'prom-client'
-import * as express from 'express'
+import express from 'express'
 
 export class Monitor {
     private kafkaLastWriteTime: client.Gauge
@@ -31,7 +31,7 @@ export class Monitor {
                 const metrics = await aggregatorRegistry.clusterMetrics();
                 res.set('Content-Type', aggregatorRegistry.contentType);
                 res.send(metrics);
-            } catch (e) {
+            } catch (e: any) {
                 res.statusCode = 500;
                 res.send(e.message);
             }
