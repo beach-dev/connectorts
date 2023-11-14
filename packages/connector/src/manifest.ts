@@ -20,7 +20,7 @@ export function loadManifest(): Manifest {
 
     let manifest = yfile
 
-    if (!manifest.name || !manifest.author || !manifest.version) {
+    if (!manifest || !manifest.name || !manifest.author || !manifest.version) {
         console.log("missing name, author, and version fields from manifest.yaml.")
     }
 

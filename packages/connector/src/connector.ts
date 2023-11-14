@@ -252,11 +252,6 @@ export class Connector {
                 batch,
                 resolveOffset,
                 heartbeat,
-                commitOffsetsIfNecessary,
-                uncommittedOffsets,
-                isRunning,
-                isStale,
-                pause,
             }) => {
                 for (let message of batch.messages) {
                     fn(message)
