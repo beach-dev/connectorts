@@ -94,7 +94,6 @@
   },
   "include": [
     "packages",
-    "/**/*.ts"
   ],
   "exclude": [
     "packages/protoregistry/test/*.ts"

@@ -14,7 +14,7 @@ function loadManifest() {
         console.log("failed to open file manifest.yaml. error: " + e);
     }
     let manifest = yfile;
-    if (!manifest.name || !manifest.author || !manifest.version) {
+    if (!manifest || !manifest.name || !manifest.author || !manifest.version) {
         console.log("missing name, author, and version fields from manifest.yaml.");
     }
     console.log("name: " + manifest.name + " author: " + manifest.author + " version: " + manifest.version);

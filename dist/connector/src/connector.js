@@ -190,7 +190,7 @@ class Connector {
         await this.consumer?.subscribe({ topics: topics.map(a => { return a.toString(); }) });
         await this.consumer?.run({
             eachBatchAutoResolve: true,
-            eachBatch: async ({ batch, resolveOffset, heartbeat, commitOffsetsIfNecessary, uncommittedOffsets, isRunning, isStale, pause, }) => {
+            eachBatch: async ({ batch, resolveOffset, heartbeat, }) => {
                 for (let message of batch.messages) {
                     fn(message);
                     resolveOffset(message.offset);
